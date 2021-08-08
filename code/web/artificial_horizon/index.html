@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" href="icons/icon-128.png">-->
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+        #canvas {
+            position: absolute;
+            margin-left: 18px;
+            margin-top: 18px;
+        }
+        #top {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            width: 306px;
+            height: 306px;
+            background: transparent url(images/tool_320_2.png) no-repeat;
+        }
+        #error {
+            color: red;
+            background-color: rgba(0,0,0,0.8);
+            width: 160px;
+            height: 80px;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            left: 73px;
+            top: 113px;
+            margin: 0px;
+            border-radius: 5px;
+            border: 2px solid red;
+        }
+    </style>
+
+    <title>Artificial Horizon</title>
+</head>
+<body>
+    <script src="/websocket.js"></script>
+    <script src="RequestAnimationFrame.js"></script>
+    <script src="main.js"></script>
+
+    <canvas width="270" height="270" id="canvas"></canvas>
+    <div id="top"></div>
+
+    <div id="error" hidden>
+        <h1>ERROR</h1>
+    </div>
+</body>
+</html>

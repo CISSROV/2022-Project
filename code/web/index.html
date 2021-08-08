@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROV Index</title>
+    <link rel="stylesheet" href="mainTheme.css">
+    <style type="text/css">
+        /* 
+         * make a shadown when hovering over a box, 
+         * plus change the mouse cursor to the clickable cursor
+         */
+        .box:hover {
+            box-shadow: 3px 3px 5px grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- top banner -->
+    <div id='banner' style="height: 80px">
+        <!-- logo and dropdown -->
+        <div id="dropdown">
+            <a href="/">
+                <img src="logo.png">
+            </a>
+            <div id="dropdownContent">
+                <a href="dataSheet.html">
+                    <p>Data Sheet</p>
+                </a>
+                <a href="status.html">
+                    <p>Status</p>
+                </a>
+                <a href="display.html">
+                    <p>Display</p>
+                </a>
+            </div>
+        </div>
+
+        <h1 id="title">ROV Menu</h1>
+    </div>
+
+    <!-- a bunch of clickable boxes to all the different pages -->
+    <div style="text-align: center;">
+        <div style="display: inline-block;">
+            <a href="dataSheet.html">
+                <div class='box'>
+                    <h3>Data Sheet</h3>
+                    <p>Displays data from the robot's sensor in a table</p>
+                </div>
+            </a>
+            <a href="status.html">
+                <div class='box'>
+                    <h3>Status and Control</h3>
+                    <p>Displays status of programs and controls</p>
+                </div>
+            </a>
+            <a href="display.html">
+                <div class='box'>
+                    <h3>Display</h3>
+                    <p>Heading Indicator & Artificial Horizon</p>
+                </div>
+            </a>
+            <a href="cgi-bin/getLog.py">
+                <div class='box'>
+                    <h3>Log</h3>
+                    <p>Display the latest log</p>
+                </div>
+            </a>
+            <!-- camera streams -->
+            <a href="http://192.168.1.3:8080/?action=stream">
+                <div class='box'>
+                    <h3>Camera 1</h3>
+                    <p>Add description</p>
+                </div>
+            </a>
+            <a href="http://192.168.1.3:8081/?action=stream">
+                <div class='box'>
+                    <h3>Camera 2</h3>
+                    <p>Top front camera</p>
+                </div>
+            </a>
+            <a href="http://192.168.1.3:8082/?action=stream">
+                <div class='box'>
+                    <h3>Camera 3</h3>
+                    <p>Add description</p>
+                </div>
+            </a>
+            <a href="overlay.html">
+                <div class='box'>
+                    <h3>Video with Heading Overlay</h3>
+                    <p>Top front camera + heading + artificial horizon</p>
+                </div>
+            </a>
+            <div class='box'>
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+    <!-- div for displaying data like error logs -->
+    <div id='dumpDiv' hidden>
+        <p id='dump'></p>
+    </div>
+</body>
+</html>
