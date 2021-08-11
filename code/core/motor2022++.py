@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.4
 '''Author: Jonathan Rotter
 
-Motor control featuring toggglable throttling of the vertical
+Motor control featuring toggleable throttling of the vertical
 thrusters as they have caused brown outs in motor pi
 
 This code is meant to be run on motor pi and requires
@@ -33,7 +33,7 @@ buttons = ['A', 'B', 'X', 'Y', 'LB', 'RB', 'BACK', 'START']
 specified by `joystick config.md`
 '''
 
-PORT = '/dev/ttyACM0'
+PORT = '/dev/ttyACM0' # If it doesn't find this port first try, try restarting the motor pi.
 '''Port that the arduino mega is connected to'''
 
 # Trim values
@@ -126,8 +126,6 @@ if __name__ == '__main__':
     example: pins[8].write(150)
     '''
 
-    pos = 0
-
 def buttonPressed(button, num):
     '''Specifies what to do if a button is pressed
 
@@ -161,6 +159,8 @@ def buttonPressed(button, num):
         elif button == 'Y':
             # Enable throttling
             emergencyPower = False
+
+pos = 0 # Set pos of camera to 0 beforehand
 
 def process(data):
     '''Uses a json file of the state of the XBox controller
@@ -233,7 +233,7 @@ def process(data):
 
     pins[12].write(pos)
     if joystick1['BACK'] and joystick1['START']:
-        pass
+        pass # do nothing because both are pressed
 
     elif joystick1['BACK'] and pos > 0:
         pos -= 5
